@@ -13,9 +13,9 @@
         <h1 class="text-center">Welcome to Pioneer Bank</h1>
         <div class="submit-area">
             <h4>Login</h4>
-            <input type="text" name="" id="" class="form-control" placeholder="Email">
+            <input type="text" name="" id="email" class="form-control" placeholder="Email">
             <br>
-            <input type="password" name="" id="" class="form-control"class="form-control" placeholder="Password">
+            <input type="password" name="" id="password" class="form-control"class="form-control" placeholder="Password">
             <br>
             <button id="login" class="btn btn-success">Enter</button>
         </div>
@@ -61,56 +61,6 @@
             </div>
         </div>
     </div>
-    <script>
-            // Login btn
-        const loginBtn = document.getElementById("login");
-        loginBtn.addEventListener("click", function(){
-            const loginArea = document.getElementById("login-area");
-            loginArea.style.display = "none";
-            const transactionArea = document.getElementById("transaction-area");
-            transactionArea.style.display = "block";
-        })
-        // deposite btn
-        const depositBtn = document.getElementById("addDeposit");
-        depositBtn.addEventListener("click", function(){
-            const depositAmount = document.getElementById("depositAmount").value;
-            const depositNumber = parseFloat(depositAmount);
-            updateSpanText("currentDeposit", depositNumber);
-
-            updateSpanText("currentBalance", depositNumber);
-
-            document.getElementById("depositAmount").value = "";
-
-        })
-        // widthdraw
-        const widthdrawBtn = document.getElementById("widthdrawBtn");
-        widthdrawBtn.addEventListener("click", function(){
-            const widthdrawBalance = document.getElementById("widthdrawBalance").value;
-            widthdrawBalanceAmount = parseFloat(widthdrawBalance);
-
-            // const currentWidthdraw = document.getElementById("widthdrawAmount").innerText;
-            // curretnWidthdrawNumber = parseFloat(currentWidthdraw);
-            // const totalWidthdrawAmount = widthdrawBalanceAmount + curretnWidthdrawNumber;
-            // document.getElementById("widthdrawAmount").innerText = totalWidthdrawAmount;
-
-            updateSpanText("widthdrawAmount", widthdrawBalanceAmount);
-
-            // const totalBalance = document.getElementById("currentBalance").innerText
-            // const totalBalanceNumber = parseFloat(totalBalance);
-            // const totalBalanceAmount = totalBalanceNumber - widthdrawBalanceAmount;
-            // document.getElementById("currentBalance").innerText = totalBalanceAmount;
-
-            updateSpanText("currentBalance", -1 * widthdrawBalanceAmount);
-
-            document.getElementById("widthdrawBalance").value = "";
-        })
-
-        function updateSpanText(id, depositNumber){
-            const current = document.getElementById(id).innerText;
-            const currentNumber = parseFloat(current);
-            const totalAmount = depositNumber + currentNumber;
-            document.getElementById(id).innerText = totalAmount;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
